@@ -34,7 +34,7 @@ with DAG(
     )
 
     two = PythonOperator(
-        task_id="one_task",
+        task_id="two_task",
         python_callable=test,
         dag=dag,
         op_kwargs={},
