@@ -33,4 +33,11 @@ with DAG(
         op_kwargs={},
     )
 
-    one
+    two = PythonOperator(
+        task_id="one_task",
+        python_callable=test,
+        dag=dag,
+        op_kwargs={},
+    )
+
+    empty_start >> one >> two
